@@ -278,6 +278,9 @@ function renderTimeline(sections) {
         section.items.forEach(item => {
             // Check if this is a merged item
             const isMerged = item.subItems && item.subItems.length > 1;
+            
+            // Check if this is the Cursor item in Languages section that should span all rows
+            const isCursorSpan = sectionSlug === 'languages' && item.label.toLowerCase() === 'cursor';
 
             if (isMerged) {
                 // Render Merged Item (Segments)
@@ -364,8 +367,16 @@ function renderTimeline(sections) {
 
                 itemEl.style.left = `${startPos}%`;
                 itemEl.style.width = `${width}%`;
-                itemEl.style.top = `${item.rowIndex * rowHeight}px`;
-                itemEl.style.height = `${itemHeight}px`;
+                
+                // If Cursor item should span all rows
+                if (isCursorSpan) {
+                    itemEl.style.top = '0px';
+                    itemEl.style.height = `${rows.length * rowHeight - 20}px`; // Span all rows
+                    itemEl.style.zIndex = '5'; // Place behind other items
+                } else {
+                    itemEl.style.top = `${item.rowIndex * rowHeight}px`;
+                    itemEl.style.height = `${itemHeight}px`;
+                }
 
                 if (item.icon) {
                     const iconContainer = document.createElement('div');
@@ -397,11 +408,17 @@ function renderTimeline(sections) {
                      else if (labelLower.includes('bqn')) { bgColor = 'rgba(46, 139, 87, 0.25)'; borderColor = '#2E8B57'; scale = 0.8; }
                      else if (labelLower.includes('java')) { bgColor = 'rgba(83, 130, 161, 0.25)'; borderColor = '#5382a1'; scale = 1.2; }
                      else if (labelLower.includes('haskell')) { bgColor = 'rgba(94, 80, 134, 0.25)'; borderColor = '#5e5086'; scale = 1.2; }
+                     else if (labelLower.includes('cursor')) { bgColor = 'rgba(0, 0, 0, 0.15)'; borderColor = '#000000'; scale = 1.0; }
                      
                      itemEl.style.backgroundColor = bgColor;
                      itemEl.style.border = `2px solid ${borderColor}`;
                      if (iconContainer) {
                          iconContainer.style.transform = `scale(${scale})`;
+                     }
+                     
+                     // Special styling for cursor span bar
+                     if (isCursorSpan) {
+                         itemEl.style.borderRadius = '48px'; // Match other language items
                      }
                 }
 
