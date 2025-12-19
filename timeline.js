@@ -9,8 +9,8 @@ const EMBEDDED_DATA = `
 - NVIDIA | Research Scientist | 2022-07 | Present | assets/nvidia.png
 
 ## Content
-- YouTube | 2017-07 | Present | fa-youtube
-- Twitter | 2018-01 | Present | fa-x-twitter
+- YouTube | 2017-07 | Present | assets/youtube.png
+- Twitter | 2018-01 | Present | assets/twitter.webp
 - ADSP Podcast | 2021-01 | Present | assets/adsp_logo.png
 - ArrayCast | 2022-01 | Present | assets/arraycast_logo.webp
 - Tacit Talk | 2024-01 | Present | assets/tacit_talk_logo.png
