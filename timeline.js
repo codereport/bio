@@ -4,8 +4,8 @@ const EMBEDDED_DATA = `
 
 ## Career
 - Moody's Analytics | Actuarial Programmer | 2014-05 | 2018-07| assets/moodys.png
-- Amazon | Software Development Engineer | 2018-08 | 2019-09 | assets/amazon.png
-- NVIDIA | Senior Software Engineer | 2019-10 | 2022-06 | assets/nvidia.png
+- Amazon | SDE | 2018-08 | 2019-09 | assets/amazon.png
+- NVIDIA | Sr Software Engineer | 2019-10 | 2022-06 | assets/nvidia.png
 - NVIDIA | Research Scientist | 2022-07 | Present | assets/nvidia.png
 
 ## Content
@@ -17,9 +17,9 @@ const EMBEDDED_DATA = `
 
 ## Languages
 - C++ | 2014-05 | Present | assets/cpp.png
-- Python | 2020-07 | Present | fa-python
+- Python | 2020-07 | Present | assets/python.png
 - APL | 2019-11 | Present | assets/apl.png
-- BQN | 2020-06 | Present | assets/bqn.png
+- BQN | 2020-06 | Present | assets/bqn.svg
 `;
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -169,10 +169,10 @@ function renderTimeline(sections) {
             const isSocial = item.icon && item.icon.startsWith('fa-');
             if (isSocial) {
                 itemEl.classList.add('type-social');
-                itemEl.style.bottom = '35px'; // Move social icons up slightly higher
+                itemEl.style.bottom = '40px'; // Increased from 35px
             } else {
                 itemEl.classList.add('type-media'); // Podcasts/Images
-                itemEl.style.bottom = '25px';
+                itemEl.style.bottom = '30px'; // Increased from 25px
             }
             
             // Icon
@@ -238,14 +238,17 @@ function renderTimeline(sections) {
         trackContainer.className = 'track-container';
 
         const rows = []; 
-        let rowHeight = 50;
-        let itemHeight = 40;
+        let rowHeight = 55;
+        let itemHeight = 44;
         
         if (sectionSlug === 'career') {
-            rowHeight = 100;
-            itemHeight = 80;
+            rowHeight = 110;
+            itemHeight = 88;
             // Merge items only for Career section
             section.items = mergeItems(section.items);
+        } else if (sectionSlug === 'languages') {
+             rowHeight = 90; // Increased row height for languages
+             itemHeight = 75; // Increased item height for languages
         }
 
         section.items.forEach(item => {
@@ -325,7 +328,7 @@ function renderTimeline(sections) {
                     label.textContent = subItem.label; // "NVIDIA"
                     // If not first segment, maybe hide "NVIDIA" label or make it smaller?
                     if (index > 0) {
-                        label.style.display = 'none'; // Hide company name on subsequent segments
+                        label.style.visibility = 'hidden'; // Hide company name on subsequent segments but keep space
                     }
                     labelContainer.appendChild(label);
 
@@ -379,6 +382,27 @@ function renderTimeline(sections) {
                         iconContainer.appendChild(img);
                     }
                     itemEl.appendChild(iconContainer);
+                }
+
+                if (sectionSlug === 'languages') {
+                     let bgColor = 'var(--card-bg)';
+                     let borderColor = 'transparent';
+                     const labelLower = item.label.toLowerCase();
+                     const iconContainer = itemEl.querySelector('.item-icon');
+                     let scale = 1.0;
+
+                     if (labelLower.includes('c++')) { bgColor = 'rgba(0, 89, 156, 0.25)'; borderColor = '#00599C'; scale = 0.8; }
+                     else if (labelLower.includes('python')) { bgColor = 'rgba(255, 222, 87, 0.25)'; borderColor = '#FFDE57'; scale = 0.8; }
+                     else if (labelLower.includes('apl')) { bgColor = 'rgba(36, 161, 72, 0.25)'; borderColor = '#24A148'; scale = 0.8; }
+                     else if (labelLower.includes('bqn')) { bgColor = 'rgba(46, 139, 87, 0.25)'; borderColor = '#2E8B57'; scale = 0.8; }
+                     else if (labelLower.includes('java')) { bgColor = 'rgba(83, 130, 161, 0.25)'; borderColor = '#5382a1'; scale = 1.2; }
+                     else if (labelLower.includes('haskell')) { bgColor = 'rgba(94, 80, 134, 0.25)'; borderColor = '#5e5086'; scale = 1.2; }
+                     
+                     itemEl.style.backgroundColor = bgColor;
+                     itemEl.style.border = `2px solid ${borderColor}`;
+                     if (iconContainer) {
+                         iconContainer.style.transform = `scale(${scale})`;
+                     }
                 }
 
                 const labelContainer = document.createElement('div');

@@ -9,12 +9,15 @@
 ## Content
 - YouTube | 2017-07 | Present | fa-youtube
 - Twitter | 2018-01 | Present | fa-x-twitter
-- ADSP Podcast | 2021-01 | Present | assets/adsp_logo.png
+- ADSP Podcast | 2020-11 | Present | assets/adsp_logo.png
 - ArrayCast | 2022-01 | Present | assets/arraycast_logo.webp
-- Tacit Talk | 2024-01 | Present | assets/tacit_talk_logo.png
+- Tacit Talk | 2024-05 | Present | assets/tacit_talk_logo.png
 
 ## Languages
-- C++ | 2014-05 | Present | assets/cpp.png
-- Python | 2020-07 | Present | fa-python
-- APL | 2019-11 | Present | assets/apl.png
-- BQN | 2020-06 | Present | assets/bqn.png
+- C++ | 2014-05 | 2025-03 | assets/cpp.png
+- Java | 2018-08 | 2019-09 | assets/java.png
+- Haskell | 2018-08 | 2019-09 | assets/haskell.svg
+- Python | 2019-10 | 2025-03 | assets/python.png
+- APL | 2019-11 | 2025-03 | assets/apl.png
+- BQN | 2020-06 | 2025-03 | assets/bqn.svg
+- Cursor | 2025-04 | Present | assets/cursor.png
