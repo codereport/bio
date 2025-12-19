@@ -485,4 +485,11 @@ footer {
         top: 1rem;
         right: 1rem;
     }
+
+    .social-icons {
+        display: grid;
+        grid-template-columns: repeat(3, auto);
+        justify-content: center;
+        gap: 1.5rem;
+    }
 }
