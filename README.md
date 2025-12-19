@@ -1,7 +1,6 @@
 # Conor Hoekstra - Linktree / About Me
 
 A simple, responsive static site for Conor Hoekstra's profile, featuring:
-- Light/Dark mode toggle (persisted via localStorage)
 - Social media links (Twitter, GitHub, YouTube, LinkedIn, Mastodon, Bluesky)
 - Podcast links
 - Resources link
