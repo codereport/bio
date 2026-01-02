@@ -35,3 +35,11 @@ No build process required. This is a static HTML/CSS/JS project.
 * https://conorshakory.com
 * https://hoogletranslate.com
 * https://plrank.com
+
+## Places That Use Background
+
+* LinkedIn
+* Twitter
+* Mastodon
+* BlueSky
+* YouTube
