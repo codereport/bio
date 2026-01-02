@@ -17,8 +17,21 @@ No build process required. This is a static HTML/CSS/JS project.
 - **Icons**: Uses FontAwesome 6.6.0 via CDN.
 - **Theme**: Colors are defined in `styles.css` under `:root` and `[data-theme="dark"]`.
 
+## Places Linking to Bio
 
+* https://adspthepodcast.com/about
+* https://tacittalk.com/about
+* https://r4podcast.com/about
+* https://www.linkedin.com/in/conorhoekstra
+* https://x.com/code_report
+* https://mastodon.social/@code_report
+* https://bsky.app/profile/codereport.bsky.social
+* https://codereport.github.io/about
+* https://www.youtube.com/@code_report
+* https://github.com/codereport
 
+## Places (on top of the above) That Use Logo
 
-
-
+* https://conorshakory.com
+* https://hoogletranslate.com
+* https://plrank.com
