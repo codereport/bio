@@ -9,17 +9,11 @@ const EMBEDDED_DATA = `
 - NVIDIA | Research Scientist | 2022-07 | Present | assets/nvidia.png
 
 ## Content
-- YouTube | 2017-07 | Present | assets/youtube.png
+- YouTube | 2017-07 | Present | assets/youtube.webp
 - Twitter | 2018-01 | Present | assets/twitter.webp
 - ADSP Podcast | 2021-01 | Present | assets/adsp_logo.png
 - ArrayCast | 2022-01 | Present | assets/arraycast_logo.webp
 - Tacit Talk | 2024-01 | Present | assets/tacit_talk_logo.png
-
-## Languages
-- C++ | 2014-05 | Present | assets/cpp.png
-- Python | 2020-07 | Present | assets/python.png
-- APL | 2019-11 | Present | assets/apl.png
-- BQN | 2020-06 | Present | assets/bqn.svg
 `;
 
 document.addEventListener('DOMContentLoaded', () => {
