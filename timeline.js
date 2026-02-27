@@ -12,7 +12,7 @@ const EMBEDDED_DATA = `
 - YouTube | 2017-07 | Present | assets/youtube.webp
 - Twitter | 2018-01 | Present | assets/twitter.webp
 - ADSP Podcast | 2021-01 | Present | assets/adsp_logo.png
-- ArrayCast | 2022-01 | Present | assets/arraycast_logo.webp
+- ArrayCast | 2022-01 | Present | assets/array_cast_logo_new.png
 - Tacit Talk | 2024-01 | Present | assets/tacit_talk_logo.png
 `;
 
