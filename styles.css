@@ -44,7 +44,7 @@ body::-webkit-scrollbar {
 
 .container {
     width: 100%;
-    max-width: 1200px;
+    max-width: 1400px;
     margin: 0 auto;
 }
 
@@ -368,7 +368,7 @@ body::-webkit-scrollbar {
 /* Content Grid Layout */
 .content-grid {
     display: grid;
-    grid-template-columns: 1fr 2fr;
+    grid-template-columns: 1fr 2fr 1fr;
     gap: 2rem;
     align-items: start;
     width: 100%;
@@ -449,6 +449,71 @@ body::-webkit-scrollbar {
     transform: translate(-50%, -50%) scale(1.1);
 }
 
+/* Websites Belt Animation */
+.websites-column h2 {
+    font-size: 1.2rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--text-secondary);
+    margin-bottom: 1rem;
+    margin-top: 2rem;
+    border-bottom: 1px solid var(--border-color);
+    padding-bottom: 0.5rem;
+}
+
+.belt-viewport {
+    perspective: 900px;
+    overflow: hidden;
+    height: 480px;
+    position: relative;
+    -webkit-mask-image: linear-gradient(to bottom, transparent 0%, black 8%, black 92%, transparent 100%);
+    mask-image: linear-gradient(to bottom, transparent 0%, black 8%, black 92%, transparent 100%);
+}
+
+.belt-track {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    transform-style: preserve-3d;
+    transform-origin: right center;
+    animation: belt-scroll 18s linear infinite;
+}
+
+.belt-card {
+    flex-shrink: 0;
+    text-decoration: none;
+    display: block;
+}
+
+.belt-card img {
+    width: 100%;
+    display: block;
+    border-radius: 10px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5);
+}
+
+.belt-label {
+    display: block;
+    text-align: center;
+    font-size: 0.8rem;
+    color: var(--text-secondary);
+    padding: 0.4rem 0;
+    letter-spacing: 0.02em;
+}
+
+.belt-viewport:hover .belt-track {
+    animation-play-state: paused;
+}
+
+@keyframes belt-scroll {
+    0% {
+        transform: translateY(0);
+    }
+    100% {
+        transform: translateY(-50%);
+    }
+}
+
 /* Footer */
 footer {
     margin-top: 1.5rem;
@@ -458,6 +523,44 @@ footer {
 }
 
 /* Responsive */
+@media (max-width: 1024px) {
+    .content-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 1.5rem;
+    }
+
+    .websites-column {
+        grid-column: 1 / -1;
+    }
+
+    .belt-viewport {
+        height: 350px;
+    }
+
+    .belt-track {
+        flex-direction: row;
+        gap: 1.5rem;
+    }
+
+    .belt-card {
+        min-width: 280px;
+    }
+
+    @keyframes belt-scroll {
+        0% {
+            transform: rotateX(8deg) translateX(0);
+        }
+        100% {
+            transform: rotateX(8deg) translateX(-50%);
+        }
+    }
+
+    .belt-viewport {
+        -webkit-mask-image: linear-gradient(to right, transparent 0%, black 5%, black 95%, transparent 100%);
+        mask-image: linear-gradient(to right, transparent 0%, black 5%, black 95%, transparent 100%);
+    }
+}
+
 @media (max-width: 768px) {
     .content-grid {
         grid-template-columns: 1fr;
@@ -471,6 +574,10 @@ footer {
 
     .video-column h2 {
         margin-top: 1rem;
+    }
+
+    .websites-column {
+        grid-column: 1;
     }
 }
 
