@@ -20,8 +20,6 @@ jobs:
           python-version: "3.12"
 
       - name: Fetch stats and update index.html
-        env:
-          YOUTUBE_API_KEY: ${{ secrets.YOUTUBE_API_KEY }}
         run: python .github/scripts/update_stats.py
 
       - name: Create or update PR
@@ -33,7 +31,7 @@ jobs:
             Automated weekly stats refresh.
 
             **Sources:**
-            - YouTube Data API v3 (subscribers, videos, views)
-            - ADSP podcast RSS feed (episode count)
+            - YouTube channel about page (subscribers, videos, views)
+            - ADSP podcast Atom feed (episode count)
           branch: auto/update-stats
           delete-branch: true
