@@ -199,7 +199,8 @@ body::-webkit-scrollbar {
     right: 70%;
 }
 
-.show-stats .stat-bubble {
+.show-stats .stat-bubble,
+:hover > .stat-bubble {
     opacity: 1;
     transform: scale(1);
 }

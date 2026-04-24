@@ -61,7 +61,7 @@ def fetch_adsp_episodes():
     m = re.search(r"Episode (\d+)", title_el.text)
     if not m:
         raise RuntimeError(f"Could not parse episode number from: {title_el.text}")
-    return int(m.group(1))
+    return int(m.group(1)) + 1  # episodes are 0-indexed
 
 
 def format_big_number(n):
