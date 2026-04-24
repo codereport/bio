@@ -1,0 +1,39 @@
+name: Update Stats
+
+on:
+  schedule:
+    - cron: "0 9 * * 1" # every Monday 9 AM UTC
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  update-stats:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Fetch stats and update index.html
+        env:
+          YOUTUBE_API_KEY: ${{ secrets.YOUTUBE_API_KEY }}
+        run: python .github/scripts/update_stats.py
+
+      - name: Create or update PR
+        uses: peter-evans/create-pull-request@v7
+        with:
+          commit-message: "Update stats"
+          title: "Update stats"
+          body: |
+            Automated weekly stats refresh.
+
+            **Sources:**
+            - YouTube Data API v3 (subscribers, videos, views)
+            - ADSP podcast RSS feed (episode count)
+          branch: auto/update-stats
+          delete-branch: true
