@@ -27,6 +27,7 @@ jobs:
         with:
           commit-message: "Update stats"
           title: "Update stats"
+          reviewers: codereport
           body: |
             Automated weekly stats refresh.
 
