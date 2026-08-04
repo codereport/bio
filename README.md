@@ -1,6 +1,6 @@
-# Conor Hoekstra - Linktree / About Me
+# Conor Shakory - Linktree / About Me
 
-A simple, responsive static site for Conor Hoekstra's profile, featuring:
+A simple, responsive static site for Conor Shakory's profile, featuring:
 - Social media links (Twitter, GitHub, YouTube, LinkedIn, Mastodon, Bluesky)
 - Podcast links
 - Resources link
